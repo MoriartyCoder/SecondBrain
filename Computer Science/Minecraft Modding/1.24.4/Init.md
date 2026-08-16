@@ -1,0 +1,2 @@
+
+The game starts with the class that implements the interface ModInitializer. In there we set the MOD_ID that will later be our key to reference the mod. The interface has the function onInitialize(). In there we add our Items, ??? (via function calls). 

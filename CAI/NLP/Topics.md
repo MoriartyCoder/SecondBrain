@@ -1,0 +1,125 @@
+## 1. NLP Fundamentals and Statistical Models
+- **Core NLP Concepts**
+    - Human Language Acquisition
+    - Basic (Machine) Learning Paradigms
+    - Human-Machine Interface
+        - Turing Test
+        - ELIZA
+        - Command Line Interface
+        - Voice Interfaces
+    - Keyword Search
+    - String-Matching-Algorithms (Naive, Finite State Automaton, Suffix Tree)
+- **Formal Language Theory and Grammars**
+    - Definitions: **Kleene Star** ($\text{V}^*$), **Kleene Plus** ($\text{V}^+$)
+    - **Chomsky Hierarchy**
+        - Classification of Formal Languages (Type 0, Type 1, Type 2, Type 3)
+        - Types: **Regular Languages** (Type 3), **Context-free languages** (Type 2), **Context-sensitive languages** (Type 1), **Unlimited grammars** (Type 0)
+        - Definition of a **Regular Grammar**
+- **Tokenization and N-grams**
+    - Definition of Tokenization
+    - Segmentation Algorithms (Max-Match, Greedy Uni-Gram, Globally Optimizing Uni-Gram, Globally Optimizing Word Length Maximizing Unigram Word Segmenter, Bigram Word Segmenter)
+    - **N-gram**: Definition (0-grams, 1-grams, 2-grams)
+- **Statistical Language Models (SLM)**
+    - Probability and **Bayes’ theorem**
+    - SLM Interpolation
+    - SLM **Smoothing**
+        - Laplace Smoothing (Lidstone & Jeffreys)
+        - Good-Turing Discounting
+        - **Kneser-Ney** Language Models
+- **Evaluation and Information Theory**
+    - Information Theory: Information Content, Redundancy, Cross Entropy Rate
+    - **Perplexity**
+## 2. Information Retrieval (IR)
+- **Introduction to IR**
+    - Elements of an IR process
+    - IR Goals: Find, Structure, Connect, Summarize Information
+- **Information Retrieval Methods**
+    - **Naive Bayes Classifier**
+    - **Term Frequency Inverse Document Frequency (TF.IDF)**
+    - Term Frequency alternatives (binary, count, log normalized)
+    - Term-Document Matrix
+    - **Bag-Of-Words (BOW)** Vector: Word correlation and Sparsity
+- **Information Theory for IR**
+    - Conditional and Joint Entropy
+    - Shannon-Weaver Model
+    - (Pointwise) Mutual Information
+    - Positive Pointwise Mutual Information (**PPMI**)
+- **Evaluation Metrics**
+    - **Precision** (Positive Predictive Value)
+    - **Recall** (Sensitivity, True Positive Rate)
+    - Fall-Out (False Positive Rate)
+    - **$\text{F}_\beta$ Score**
+- **Ranking and Graph Models**
+    - Distance Metrics: Euclidean distance, **Cosine Similarity**
+    - **PageRank** (Random Surfer Model, Power Iteration Method, Solving for Spider Traps and Dead Ends (Random Teleports))
+
+## 3. Text Pre-processing and Word Embeddings
+- **Linguistic Foundations and Pre-processing**
+    - Defining "words" (e.g., handling casing, disfluencies, fragments, inflection)
+    - Linguistic sub-disciplines: Lexicography and Morphology
+    - Vocabulary (Definition of a lexicon)
+- **Fuzzy String Matching**
+    - Reasons: OCR errors, Spelling Errors, Phonetically ambiguous words, Proper names
+    - How to search for similar strings (Metric space, Distance metric)
+    - **Edit distance / Levenshtein-Distance**
+    - Error Types & Word Error Rate (Insertions, Deletions, Substitutions)
+    - Levenshtein-Distance Algorithm
+- **Text Normalization and Morphology**
+    - Word segmentation
+    - Normalization (Casing, Handling special cases)
+    - Morphology
+        - Inflection and Affixes (prefix, infix, suffix, circumfix)
+        - Morphology Tree
+        - **Lemmatization** (finding the basic form)
+        - **Stemming** (stripping suffixes), including **Porter’s algorithm**
+    - **Sentence Segmentation** (Definitions, Classification, Spoken Language considerations)
+- **Word Embeddings**
+    - From Character encoding (e.g., UTF-8, Unicode) to **Vector Representation**
+    - **Word2Vec**: **Skip-Gram** and **CBOW**
+    - Optimization Techniques: **Negative Sampling** and **Hierarchical Softmax**
+    - Other Models: **GloVe**, Context Sensitive Word Embedding (**ELMo**)
+    - **T-SNE** (t-distributed stochastic neighbor embedding) for dimensionality reduction
+
+## 4. Neural Networks and Advanced Sequence Modeling
+- **Neural Language Models and RNNs**
+    - **Feed Forward Network (FFN)**
+    - **Recurrent Neural Networks (RNN)**
+        - Architectures for different tasks (one-to-one, one-to-many, many-to-one, many-to-many)
+        - RNN unrolling and hidden states
+        - Elman Recurrent Neural Network, Stacked RNNs
+- **Syntactic Analysis (Parsing)**
+    - **Part-Of-Speech (POS) Tagging** (with Bi-Directional RNN)
+    - **Constituency Parsing** (Decomposition into constituents based on a **Context-Free Grammar (CFG)**)
+    - **Dependency Parsing** (Analyzing head-modifier relationships in a **Dependence Tree**)
+- **Sequence-to-Sequence (Seq2seq) Models**
+    - Architecture: **Encoder-Decoder** with RNNs and Autoregression (used in NMT)
+    - Seq2seq Architectures based on Delay: **No delay** (POS, Punctuation), **Partial delay** (G2P, Named Entity Extraction), **Full delay** (Neural Machine Translation)
+- **Attention and Transformer Models**
+    - **Attention Mechanism** (Focus on Relevant Section, Key concepts: **Query, Key, Value**)
+    - **Dot-Product Attention** and **Multi-Head Dot-Product Attention**
+    - **The Transformer Architecture** (uses Multi-Head Attention and Positional Encoding)
+    - **BERT** (Bidirectional Encoder Representations from Transformers)
+    - Advanced Applications: **Intent Classification**, **Question Classification**, **Sentiment Analysis** (Objectivity vs. Subjectivity, Polarity)
+
+## 5. Dialog Systems and ASR
+- **Dialog System Architecture**
+    - Overview of the four main components:
+        1. **Automatic Speech Recognition (ASR)**
+        2. **Natural Language Understanding (NLU)**
+        3. **Dialog Management**
+        4. **Natural Language Generation (NLG)**
+- **Automatic Speech Recognition (ASR)**
+    - Definition and overall system flow (Front-End $\to$ Acoustic Model $\to$ Language Model $\to$ Word Sequence)
+    - **Acoustic Model** and **Language Model** components
+    - Articulatory Phonetics: Vocal tract and classification of sounds
+    - Speech Organs: Active and Passive **Articulators** (e.g., lips, tongue, vocal cords)
+    - Smallest descriptive unit: **Phon** (or sound)
+- **Natural Language Generation (NLG) Evaluation**
+    - **BLEU (Bilingual Evaluation Understudy)** score
+    - Components: $\text{N}$-gram precision, Brevity Penalty
+    - Corpus-level metric (BLEU-N)
+    - **Self-BLEU** (measure of resemblance degree)
+- **Future Directions of SLU**
+    - Evolution from simple queries to a **Personal Assistant** with intuition
+    - Future application areas: **Internet Of Things** ("Being Connected"), **Ambient Intelligence** ("Being Entertained")
+    - Future Goals: Search, Knowledge, Q&A, Dialog, **Emotion**, **Proprioception**
