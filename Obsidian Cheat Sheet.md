@@ -21,6 +21,10 @@ Code
 Example:
 [Text](https://www.example.com)
 
+## Internal Links
+```
+[[]]
+```
 
 ## Highlighting
 

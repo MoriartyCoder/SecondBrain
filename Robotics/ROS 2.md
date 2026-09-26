@@ -1,19 +1,27 @@
 # Basics
 
-# Nodes
-## Concept
+## Load ROS2
+```
+source /opt/ros/jazzy/setup.bash
+```
+
+## Everyday working
+
+
+## Nodes
+### Concept
 A node represents a single task like reading a sensor or camera, controling a motor or planning the path.
 
-## Basics
+### Basics
 ```
 ros2 node list
 ```
 
 ```
-ros2 node info <>
+ros2 node info <node_name>
 ```
 
-### Talker Basic
+#### Talker Basic
 ```
 #include <chrono>       // Für Zeitfunktionen (z.B. 500ms)
 #include <functional>   // Für std::bind(), um Callback-Funktionen zu binden
@@ -86,27 +94,27 @@ int main(int argc, char * argv[]) {
 ```
 
 
-# Topics
-## Concept
+## Topics
+### Concept
 Topics are the main communication mechanism. Nodes can publicate data on a topic and other nodes can subscribe. This is happening asyncron.
 
-## Basics
+### Basics
 ```
 ros2 topic list
 ```
-# Services
-## Concept
+## Services
+### Concept
 Services differ from topics. They are syncron and are working on a request/response-base. They can be used for configuration requests, triggers or status updates.
 
-## Basics
+### Basics
 ```
 ros2 service list
 ```
-# Parameters
-## Concept
+## Parameters
+### Concept
 Parameters are the single point of truth for configurations. Similar to enviromental variables.
 
-## Basics
+### Basics
 ```
 ros2 param list
 ```
@@ -123,7 +131,7 @@ ros2 param get <node_name> <parameter_name>
 ros2 param set <node_name> <parameter_name>
 ```
 
-### Store and load parameters
+#### Store and load parameters
 Store: 
 ```
 ros2 param dump <node_name> > <file_name>.yaml
@@ -138,8 +146,8 @@ Load parameters on start of a node:
 ros2 run <package_name> <executable_name> --ros-args --params-file <file_name>
 ```
 
-# Something
-## Create workspace
+## Something
+### Create workspace
 ```
 sudo apt update
 sudo apt install python3-colcon-common-extensions
@@ -153,24 +161,25 @@ colcon test
 source install/setup.bash
 ```
 
-## Create package
+### Create package
 ```
 ros2 pkg create <package_name> --build-type ament_cmake --node-name <node_name>
 ```
 
-## Build package
+### Build package
 ```
+cd <ws>/src
 colcon build --packages-select <package_name>
 source install/local_setup.bash
 ```
-### Build package with debugging
+#### Build package with debugging
 ```
 colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug --packages-select <package_name>
 source install/local_setup.bash
 ```
 
-## Debugging
-### Basics
+### Debugging
+#### Basics
 1. Packages
 ```
 sudo apt update && apt install gdb gdbserver
@@ -199,17 +208,20 @@ ros2 run --prefix 'gdbserver localhost:3000' <package_name> <executable_name>
 5. Take outputed path and replace **\<build-path-executable\>** in step 3.
 6. Run the config 
 
-### Note
+#### Note
 The '**gdbserver localhost:3000**' can be added to the lauch file!
-## Launch file
+### Launch file
 ```
 ros2 launch <package_name> <launch_file>
 ```
-# Actions
-## Concept
+## Actions
+### Concept
 Actions are like the progessbar of an installation where you can see whats currently happening. While an action like reaching a destination or moving a part is active it sends out continous feedback. To do so a module has three subcomponents: goal, feedback and result. 
 
-## Basics
+### Basics
 ```
 ros2 action list
 ```
+
+# RViz ![[RViz]]
+
