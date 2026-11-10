@@ -6,6 +6,12 @@
 - [ ] Analyse scale variation
 - [ ] Test augmentation for: histogram compression, 
 - [ ] Consider and research secondary dataset with the same measurements as as secondary test-dataset (CST Anti-UAV)
+- [ ] Infrarot-Kameras: Grundlagen, Technologien und Systeme
+- [ ] Blurring durch PSF / Tiefenschärfe
+- [ ] Salt-and-pepper-noise
+- [ ] Stuck pixels (fast analog zu Salt und pepper)
+- [ ] Motion Blur, Optischer Fluss, Lucas-Kanade-Methode
+- [ ] Analysis of layers of augmentation (Salt-and-Pepper, Stuck pixel are hardware based, Fixed noise pattern?)
 
 ## Papers to review
 - [ ] [[AUGTARGET DATA AUGMENTATION FOR INFRARED SMALL TARGET DETECTION]]
@@ -23,6 +29,7 @@
 ## Pre-training
 - [ ] Select YOLO model
 - [ ] Select metrics for evaluation
+- [ ] Image normalization (when and with what?)
 - [ ] Select weights management strategy
 - [ ] Find way to evaluate data easily
 - [ ] Implement augmentation pipeline
@@ -48,7 +55,6 @@
  ---
 # Title
 Analysis (of the effect) of Augmentations on prediction performance for Artificial Neural Networks on IR datasets
-
 
 # Intro
 ## Motivation
@@ -91,8 +97,6 @@ and why?
 ## Metrics
 
 ## Models
-
-### CNN vs Transformer
 
 # Results/Discussion
 What are the results. What went good and bad? How to interpret the result? Can it be evaluated?
